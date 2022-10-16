@@ -1,0 +1,9 @@
+---
+
+collections:
+  # "core" ansible collections
+  - name: community.general
+  - name: ansible.posix
+
+  # CIP collection
+  - git+https://github.com/ansible-collections/community.cip.git
