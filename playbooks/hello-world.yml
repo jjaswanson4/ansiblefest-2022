@@ -1,0 +1,10 @@
+---
+
+- name: test AAP
+  hosts:
+    - all
+  gather_facts: no
+  tasks:
+    - name: debug
+      debug:
+        msg: "Hello World!"
