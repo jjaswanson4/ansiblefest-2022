@@ -42,7 +42,15 @@
             value: 6000
     - name: More dramatic effect
       ansible.builtin.pause:
-        seconds: 20
+        seconds: 10
+    - name: Lets go the other way again
+      community.cip.ensure_tags:
+        tags:
+          - name: "isForward"
+            value: True
+    - name: More dramatic effect
+      ansible.builtin.pause:
+        seconds: 10            
     - name: Shut everything off
       community.cip.ensure_tags:
         tags:
