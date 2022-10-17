@@ -6,4 +6,5 @@ collections:
   - name: ansible.posix
 
   # CIP collection
-  - git+https://github.com/ansible-collections/community.cip.git
+  - name: community.cip
+    version: 1.0.1
