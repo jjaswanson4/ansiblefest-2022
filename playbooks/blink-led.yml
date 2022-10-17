@@ -8,4 +8,4 @@
     - name: loop over light toggle
       ansible.builtin.include_role:
         name: ../roles/blink-led
-      loop: "{{ range(0, 12, 1) | list }}"
+      loop: "{{ range(0, 16, 1) | list }}"
