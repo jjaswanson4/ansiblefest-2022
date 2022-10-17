@@ -35,18 +35,18 @@
     - name: Pause for dramatic effect
       ansible.builtin.pause:
         seconds: 10
-    - name: Maax it out
+    - name: Max it out
       community.cip.ensure_tags:
         tags:
           - name: "MotorSetPoint"
             value: 6000
-  - name: More dramatic effect
-    ansible.builtin.pause:
-      seconds: 20
-  - name: Shut everything off
-    community.cip.ensure_tags:
-      tags:
-        - name: "Start"
-          value: False
-        - name: "Stop"
-          value: True
+    - name: More dramatic effect
+      ansible.builtin.pause:
+        seconds: 20
+    - name: Shut everything off
+      community.cip.ensure_tags:
+        tags:
+          - name: "Start"
+            value: False
+          - name: "Stop"
+            value: True
