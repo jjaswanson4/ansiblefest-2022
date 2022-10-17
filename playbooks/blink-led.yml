@@ -1,0 +1,11 @@
+---
+
+- name: Ansiblefest2022 Demo | BlinkLED
+  hosts:
+    - all
+  gather_facts: no
+  tasks:
+    - name: loop over light toggle
+      ansible.builtin.include_role:
+        name: ../roles/blink-led
+      loop: "{{ range(0, 30, 1) | list }}"

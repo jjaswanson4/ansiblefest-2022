@@ -1,0 +1,52 @@
+---
+
+- name: Ansiblefest2022 Demo | Spin Motor
+  hosts:
+    - all
+  gather_facts: no
+  tasks:
+    - name: Set motor start tag to true, stop tag to false, start slow
+      community.cip.ensure_tags:
+        tags:
+          - name: "Start"
+            value: True
+          - name: "Stop"
+            value: False
+          - name: "MotorSetPoint"
+            value: 100
+          - name: "isForward"
+            value: True
+    - name: Pause for dramatic effect
+      ansible.builtin.pause:
+        seconds: 10
+    - name: Speed up
+      community.cip.ensure_tags:
+        tags:
+          - name: "MotorSetPoint"
+            value: 5000
+    - name: Pause for dramatic effect
+      ansible.builtin.pause:
+        seconds: 10
+    - name: Lets go the other way
+      community.cip.ensure_tags:
+        tags:
+          - name: "isForward"
+            value: False
+    - name: Pause for dramatic effect
+      ansible.builtin.pause:
+        seconds: 10
+    - name: Maax it out
+      community.cip.ensure_tags:
+        tags:
+          - name: "MotorSetPoint"
+            value: 6000
+  - name: More dramatic effect
+    ansible.builtin.pause:
+      seconds: 20
+  - name: Shut everything off
+    community.cip.ensure_tags:
+      tags:
+        - name: "Start"
+          value: False
+        - name: "Stop"
+          value: True
