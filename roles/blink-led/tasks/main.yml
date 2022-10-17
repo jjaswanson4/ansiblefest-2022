@@ -8,7 +8,7 @@
           #- name: Pause for 1 second
           #  ansible.builtin.pause:
           #    seconds: 1
-- name: Turn on the LED
+- name: Turn off the LED
   community.cip.ensure_tags:
     tags:
       - name: "LED_Ctrl"
